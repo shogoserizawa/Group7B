@@ -12,7 +12,6 @@ function Home() {
     <div>
       <ChatRoom addtask = {addTask}/>
       <Todo task = {tasks}/>
-      <div>"hello"</div>
     </div>
   );
 }
