@@ -1,12 +1,12 @@
 import React from 'react';
-import './Todo.css';
+import './Event.css';
 
-function Todo(props) {
+function Event(props) {
   return (
     <div>
-      <h2>Todo List</h2>
+      <h2>Event List</h2>
       <ul>
-        {props.task.map((task, index) => (
+        {props.event.map((task, index) => (
           <li key={index}>{task.message}</li>
         ))}
       </ul>
@@ -14,4 +14,4 @@ function Todo(props) {
   );
 }
 
-export default Todo;
+export default Event;
