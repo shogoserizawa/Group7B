@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "./ChatRoom.css";
 
 const ChatRoom = (props) => {
-  const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
   const [text2, setText2] = useState("");
@@ -19,8 +18,9 @@ const ChatRoom = (props) => {
 
     websocket.onmessage = (e) => {
       const [sender, message, date, type] = e.data.split("<%>");
-      const newMessage = { sender, message, date , type};
-      setMessages((prevMessages) => [...prevMessages, newMessage]);
+      const isClick = 0;
+      const newMessage = { sender, message, date , type, isClick };
+      props.addmessage(newMessage);
     };
 
     return () => {
@@ -52,19 +52,19 @@ const ChatRoom = (props) => {
     return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
   };
 
-  const handleClick = (msg) => {
+  const handleClick = (msg, index) => {
     if (msg.type === '0') {
-      props.addtask(msg);
+      props.addtask(index);
     } else {
-      props.addevent(msg);
+      props.addevent(index);
     }
   };
 
   return (
     <div>
       <div className="chatbox">
-        {messages.map((msg, index) => (
-          <button key={index} onClick={() => handleClick(msg)}>
+        {props.messages.map((msg, index) => (
+          <button key={index} onClick={() => handleClick(msg, index)}>
             {msg.message} {formatDate(msg.date)}
           </button>
         ))}
