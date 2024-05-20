@@ -6,8 +6,8 @@ function Event(props) {
     <div>
       <h2>Event List</h2>
       <ul>
-        {props.event.map((task, index) => (
-          <li key={index}>{task.message}</li>
+        {props.event.filter(event=>event.isClick === 2).map((event, index) => (
+          <li key={index}>{event.message}</li>
         ))}
       </ul>
     </div>
