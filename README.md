@@ -1,3 +1,15 @@
+# Mainブランチを最新状態にする
+
+作業前にmainブランチを最新状態にする
+
+```
+$ git checkout main
+$ git pull
+$ git checkout 作業ブランチ名  // サブブランチに作業名を付けるとわかりやすい
+$ git merge main
+```
+
+
 # ローカルに作業ブランチを作成する
 
 ローカル環境にて、ターミナルを用いてブランチを切る。
@@ -8,7 +20,7 @@
 $ git checkout main
 $ git fetch
 $ git pull
-$ git checkout -b feature/add-calendar-page  // サブブランチに作業名を付けるとわかりやすい
+$ git checkout -b ブランチ名         // サブブランチに作業名を付けるとわかりやすい
 ```
 
 # プルリクを出す
