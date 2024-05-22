@@ -12,8 +12,8 @@ function Home() {
 
   // messagesに新しいメッセージを追加する関数
   const addMessage = (text) => {
-    const newMessage = { ...text, id: Date.now()};
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
+    //const newMessage = { ...text, id: Date.now()};
+    setMessages((prevMessages) => [...prevMessages, text]);
   };
 
   // messagesのindex(ポインタのようなもの)を受け取り、その要素のisClickの値を変える関数
@@ -36,10 +36,8 @@ function Home() {
   };
 
   // todo, Eventリストから削除するための関数。isClickを0にすることで削除
-  const deleteEvent = (id) => {
-    setMessages((prevMessages) =>
-      prevMessages.map((msg) => (msg.id === id ? { ...msg, isClick: 0} :msg))
-    );
+  const deleteEvent = (index) => {
+    setMessages((index, 0));
   };
 
   return (

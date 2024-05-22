@@ -2,13 +2,8 @@ import React from 'react';
 import './Event.css';
 
 function Event(props) {
-  const handleCheckboxChange = (id) => {
-    props.delete(id);
-  };
-
-  const formatDate = (dateString) => {
-    const [year, month, day] = dateString.split("-");
-    return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
+  const handleCheckboxChange = (index) => {
+    props.delete(index);
   };
 
   return (
