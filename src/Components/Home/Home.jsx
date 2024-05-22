@@ -41,7 +41,7 @@ function Home() {
   };
 
   return (
-    <div className="container">{/*css用クラス名定義*/}
+    <div className="container">{/*css用クラス名の定義*/}
       <div className="top-section">
         <div className="chat-room">
           <ChatRoom
