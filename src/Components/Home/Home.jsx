@@ -40,7 +40,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className="App">
       {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
         messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
       <ChatRoom
