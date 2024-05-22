@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .chat-room {
+    width: 50%;
+    height: 400px;
+    overflow-y: auto;
+  }
+  
+  .todo-list,
+  .event-list {
+    width: 25%;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 71px;
+  }
+  
+  
+  .input-form {
+    width: 100%;
+  }

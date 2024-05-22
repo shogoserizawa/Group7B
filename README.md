@@ -1,3 +1,42 @@
+# Mainブランチを最新状態にする
+
+作業前にmainブランチを最新状態にする
+
+```
+$ git checkout main
+$ git pull
+$ git checkout 作業ブランチ名  // サブブランチに作業名を付けるとわかりやすい
+$ git merge main
+```
+
+
+# ローカルに作業ブランチを作成する
+
+ローカル環境にて、ターミナルを用いてブランチを切る。
+
+以下のコマンドを打って、最新にしてからブランチを作る。
+
+```
+$ git checkout main
+$ git fetch
+$ git pull
+$ git checkout -b ブランチ名         // サブブランチに作業名を付けるとわかりやすい
+```
+
+# プルリクを出す
+```
+$ git add .                         // ※特定のファイルのみコミットしたい場合はファイル名を指定する
+$ git commit -m "作業タイトル"    // コミットメッセージに何をしたか簡潔に書く
+$ git log                          // 実行の必要はなし。コミット履歴を確認できる。
+$ git checkout main            // メインブランチに切り替える
+$ git pull                      // 現在の最新情報を持ってくる
+$ git checkout feature/issue#1 // ←feature/issue#1は自分が今作業中の作業ブランチに置き換える
+$ git merge main　　　　　　　   //更新したmainブランチの内容を作業ブランチにマージする
+// コンフリクトがなければ....
+$ git push -u origin feature/issue#1
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
