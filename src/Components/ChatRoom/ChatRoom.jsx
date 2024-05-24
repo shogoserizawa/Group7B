@@ -36,6 +36,7 @@ const ChatRoom = (props) => {
       websocket.close();
     };
   }, [props]);
+
   // todoフォームの送信ボタンが押されたときの処理
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,6 +75,7 @@ const ChatRoom = (props) => {
 
   return (
     <div>
+      <h1 className="chatroom-title">CHAT ROOM</h1>
       <div className="chatbox">
         {props.messages.map((msg, index) => (
           <button key={index} onClick={() => handleClick(msg, index)}>
@@ -104,7 +106,7 @@ const ChatRoom = (props) => {
             </label>
           </div>
           <div className="form-item">
-            <button type="submit">送信</button>
+            <button type="submit">Go</button>
           </div>
         </form>
 
@@ -129,7 +131,7 @@ const ChatRoom = (props) => {
             </label>
           </div>
           <div className="form-item">
-            <button type="submit">送信</button>
+            <button type="submit">Go</button>
           </div>
         </form>
       </div>

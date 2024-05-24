@@ -1,9 +1,17 @@
-/* ChatRoom.css */
+.chatroom-title {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-style: italic; /* フォントを斜体にする */
+  font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
+  font-weight: 100;
+}
+
 .chatbox {
   width: 500px; /* 固定の横幅を設定 */
   height: 400px; /* 固定の縦幅を設定 */
   overflow-y: auto; /* 縦方向にスクロール可能にする */
-  border: 1px solid #ccc;
+  border: 1.5px solid #000000;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -40,10 +48,12 @@
   flex-direction: column;
   margin-top: 20px;
   width: 500px; /* 固定の横幅を設定 */
-  margin: 0; /* 中央揃え */
+  margin: 0; /* 左揃え */
 }
 
 .form-item {
+  font-style: italic; /* フォントを斜体にする */
+  font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
   margin-bottom: 10px;
 }
 
@@ -53,6 +63,7 @@
   padding: 10px;
   margin: 5px 0;
   border: 1px solid #ccc;
+  border: 1.5px solid #000000;
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -75,5 +86,5 @@
   display: flex;
   flex-direction: column;
   width: 500px; /* 固定の横幅を設定 */
-  margin: 0; /* 中央揃え */
+  margin: 0; /* 左揃え */
 }
