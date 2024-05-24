@@ -16,7 +16,7 @@ const ChatRoom = (props) => {
     //websocketに接続
     const websocket = new WebSocket("ws://localhost:60000");
     socketRef.current = websocket;
-    
+
     //websocketが開いたときの動作
     websocket.onopen = () => {
       console.log("WebSocket connected");
@@ -27,26 +27,22 @@ const ChatRoom = (props) => {
       // <%>を境界に入れているのでそれを目印に送られた文字列を分割している
       const [sender, message, date, type] = e.data.split("<%>");
       const isClick = 0;
-      const newMessage = { sender, message, date , type, isClick };
-
+      const newMessage = { sender, message, date, type, isClick };
       // props.addmessageでHome.jsxのaddMessage関数にアクセス
       props.addmessage(newMessage);
     };
 
     return () => {
-      websocket.close = () => {
-        console.log("WebSocket connection closed");
-      };
-      websocket.removeEventListener("message", onmessage);
+      websocket.close();
     };
-  }, []);
-
+  }, [props]);
   // todoフォームの送信ボタンが押されたときの処理
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (text.trim() === "" || date.trim() === "") return;
     const combinedString = `${text}<%>${date}<%>0`;
-    setText("")
-    setDate("")
+    setText("");
+    setDate("");
     //サーバに文字列送信
     socketRef.current.send(combinedString);
   };
@@ -54,9 +50,10 @@ const ChatRoom = (props) => {
   // eventフォームの送信ボタンが押されたときの処理
   const EventhandleSubmit = (e) => {
     e.preventDefault();
+    if (text2.trim() === "" || date2.trim() === "") return;
     const combinedString = `${text2}<%>${date2}<%>1`;
-    setText2("")
-    setDate2("")
+    setText2("");
+    setDate2("");
     socketRef.current.send(combinedString);
   };
 
@@ -68,7 +65,7 @@ const ChatRoom = (props) => {
 
   // chatのメッセージがクリックされたときの動作。主にisClickの値を変更している。
   const handleClick = (msg, index) => {
-    if (msg.type === '0') {
+    if (msg.type === "0") {
       props.addtask(index);
     } else {
       props.addevent(index);
@@ -80,59 +77,62 @@ const ChatRoom = (props) => {
       <div className="chatbox">
         {props.messages.map((msg, index) => (
           <button key={index} onClick={() => handleClick(msg, index)}>
-            {msg.message} {formatDate(msg.date)}
+            <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
           </button>
         ))}
       </div>
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="form-item">Todo</div>
-        <div className="form-item">
-          <label>
-            <input
-              type="text"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-item">
-          <label>
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-item">
-          <button type="submit">送信</button>
-        </div>
-      </form>
 
-      <form className="form-container" onSubmit={EventhandleSubmit}>
-        <div className="form-item">Event</div>
-        <div className="form-item">
-          <label>
-            <input
-              type="text"
-              value={text2}
-              onChange={(e) => setText2(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-item">
-          <label>
-            <input
-              type="date"
-              value={date2}
-              onChange={(e) => setDate2(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-item">
-          <button type="submit">送信</button>
-        </div>
-      </form>
+      <div className="todo-event-form">
+        <form className="form-container" onSubmit={handleSubmit}>
+          <div className="form-item">Todo</div>
+          <div className="form-item">
+            <label>
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-item">
+            <label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-item">
+            <button type="submit">送信</button>
+          </div>
+        </form>
+
+        <form className="form-container" onSubmit={EventhandleSubmit}>
+          <div className="form-item">Event</div>
+          <div className="form-item">
+            <label>
+              <input
+                type="text"
+                value={text2}
+                onChange={(e) => setText2(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-item">
+            <label>
+              <input
+                type="date"
+                value={date2}
+                onChange={(e) => setDate2(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="form-item">
+            <button type="submit">送信</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

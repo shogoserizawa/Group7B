@@ -1,24 +1,79 @@
+/* ChatRoom.css */
+.chatbox {
+  width: 500px; /* 固定の横幅を設定 */
+  height: 400px; /* 固定の縦幅を設定 */
+  overflow-y: auto; /* 縦方向にスクロール可能にする */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  margin: 0; /* 画面左固定 */
+  margin-bottom: 20px;
+}
+
+.chatbox button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chatbox button:hover {
+  background-color: #e0e0e0;
+}
+
+.chatbox .sender {
+  font-weight: bold;
+}
+
 .form-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 500px; /* 固定の横幅を設定 */
+  margin: 0; /* 中央揃え */
 }
 
 .form-item {
-  margin-right: 10px; /* アイテム間の間隔を調整 */
+  margin-bottom: 10px;
 }
 
-.form-item label {
+.form-item input[type="text"],
+.form-item input[type="date"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-item button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-item button:hover {
+  background-color: #0056b3;
+}
+
+.todo-event-form {
   display: flex;
-  align-items: center;
-}
-
-.form-item input {
-  margin-left: 5px; /* ラベルと入力フィールドの間隔を調整 */
-}
-
-.chatbox {
-  width: 500px;
-  height: 200px;
-  overflow-y: auto;
-  border: 1px solid #333;
+  flex-direction: column;
+  width: 500px; /* 固定の横幅を設定 */
+  margin: 0; /* 中央揃え */
 }
