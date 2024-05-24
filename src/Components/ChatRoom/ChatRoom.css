@@ -4,29 +4,29 @@
 
 .chatroom-banner {
   position: absolute; /* 絶対位置を設定 */
-  top: 10px; /* 上からの距離を設定 */
-  left: 10px; /* 左からの距離を設定 */
+  top: 0px; /* 上からの距離を設定 */
+  left: 25px; /* 左からの距離を設定 */
   width: 50px; /* 必要に応じてサイズを調整 */
   height: auto; /* 高さを自動調整 */
 }
 
 .chatroom-title {
   text-align: left;
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 10px;
   font-style: italic; /* フォントを斜体にする */
   font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
   font-weight: 100; /* フォントを細くする */
-  padding-left: 70px; /* 左余白を追加してバナーとタイトルが重ならないようにする */
+  padding-left: 10px; /* 左余白を追加してバナーとタイトルが重ならないようにする */
 }
 
 .chatbox {
   width: 500px; /* 固定の横幅を設定 */
   height: 400px; /* 固定の縦幅を設定 */
   overflow-y: auto; /* 縦方向にスクロール可能にする */
-  border: 1px solid #000000; /* 境界線の色を黒にする */
+  border: 1.5px solid #000000; /* 境界線の色を黒にする */
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   margin: 0; /* 画面左固定 */
@@ -70,6 +70,8 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center; /* アイテムを中央に揃える */
+  font-style: italic; /* フォントを斜体にする */
+  font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
 }
 
 .form-item label {
@@ -80,8 +82,8 @@
 .form-item input[type="date"] {
   width: calc(100% - 20px);
   padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin: 0px 0;
+  border: 1px solid #9e9e9e;
+  border-radius: 15px;
   box-sizing: border-box;
 }
