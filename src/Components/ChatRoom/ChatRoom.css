@@ -1,9 +1,30 @@
-/* ChatRoom.css */
+.chatroom-container {
+  position: relative; /* 相対位置を設定 */
+}
+
+.chatroom-banner {
+  position: absolute; /* 絶対位置を設定 */
+  top: 10px; /* 上からの距離を設定 */
+  left: 10px; /* 左からの距離を設定 */
+  width: 50px; /* 必要に応じてサイズを調整 */
+  height: auto; /* 高さを自動調整 */
+}
+
+.chatroom-title {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-style: italic; /* フォントを斜体にする */
+  font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
+  font-weight: 100; /* フォントを細くする */
+  padding-left: 70px; /* 左余白を追加してバナーとタイトルが重ならないようにする */
+}
+
 .chatbox {
   width: 500px; /* 固定の横幅を設定 */
   height: 400px; /* 固定の縦幅を設定 */
   overflow-y: auto; /* 縦方向にスクロール可能にする */
-  border: 1px solid #ccc;
+  border: 1px solid #000000; /* 境界線の色を黒にする */
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -20,11 +41,12 @@
   padding: 10px;
   margin: 5px 0;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px; /* ボタンを丸くする */
   background-color: #f0f0f0;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: background-color 0.2s;
+  font-family: "Arial", sans-serif; /* フォントファミリーを統一 */
 }
 
 .chatbox button:hover {
@@ -40,11 +62,18 @@
   flex-direction: column;
   margin-top: 20px;
   width: 500px; /* 固定の横幅を設定 */
-  margin: 0; /* 中央揃え */
+  margin: 0; /* 左揃え */
+  padding-left: 10px; /* 左余白を追加 */
 }
 
 .form-item {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* アイテムを中央に揃える */
+}
+
+.form-item label {
+  flex: 1;
 }
 
 .form-item input[type="text"],
@@ -55,25 +84,4 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-}
-
-.form-item button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.form-item button:hover {
-  background-color: #0056b3;
-}
-
-.todo-event-form {
-  display: flex;
-  flex-direction: column;
-  width: 500px; /* 固定の横幅を設定 */
-  margin: 0; /* 中央揃え */
 }
