@@ -15,7 +15,7 @@ function Event(props) {
           // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
           <li key={event.id}>
             <label>
-              <input type="checkbox" onChange={() => handleCheckboxChange(event.id)}/> {/*チェックボックス追加*/}
+              <input type="checkbox" onChange={() => handleCheckboxChange(event.id)}/> {/*チェックボックスの追加*/}
               {event.date.slice(-5)} | {event.message}
             </label>
           </li>

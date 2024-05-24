@@ -16,7 +16,7 @@ function Todo(props) {
           // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
           <li key={task.id}>
             <label>
-              <input type="checkbox" onChange={() => handleCheckboxChange(task.id)} />{/*チェックボックス追加*/}
+              <input type="checkbox" onChange={() => handleCheckboxChange(task.id)} />{/*チェックボックスの追加*/}
               {task.date.slice(-5)} | {task.message}
             </label>
           </li>
