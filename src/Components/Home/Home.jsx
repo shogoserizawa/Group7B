@@ -3,6 +3,7 @@ import ChatRoom from "../ChatRoom/ChatRoom";
 import Todo from "../Todo/Todo";
 import Event from "../Event/Event";
 import "./Home.css";
+import banner from "../images/banner.png"; // 画像をインポート
 
 function Home() {
   // 下の配列に送られてきたメッセージがすべて入っている。要素は{ sender, message, date , type, isClick }の形。
@@ -41,16 +42,19 @@ function Home() {
 
   return (
     <div className="App">
-      {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
+      <div className="common-container">
+        <img src={banner} alt="Banner" className="chatroom-banner" />
+        {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
         messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
-      <ChatRoom
-        addtask={addTask}
-        addevent={addEvent}
-        messages={messages}
-        addmessage={addMessage}
-      />
-      <Todo task={messages} delete={deleteEvent} />
-      <Event event={messages} delete={deleteEvent} />
+        <ChatRoom
+          addtask={addTask}
+          addevent={addEvent}
+          messages={messages}
+          addmessage={addMessage}
+        />
+        <Todo task={messages} delete={deleteEvent} />
+        <Event event={messages} delete={deleteEvent} />
+      </div>
     </div>
   );
 }
