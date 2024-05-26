@@ -14,7 +14,8 @@ function Event(props) {
             <li key={index}>
               <label>
                 <input type="checkbox" onChange={() => props.delete(index)} />
-                {event.date.slice(-5)} | {event.message}
+                {event.date.slice(-5)}
+                {event.message}
               </label>
             </li>
           ))}
