@@ -36,7 +36,7 @@ const ChatRoom = (props) => {
     return () => {
       websocket.close();
     };
-  }, [props]);
+  }, []);
 
   // todoフォームの送信ボタンが押されたときの処理
   const handleSubmit = (e) => {
