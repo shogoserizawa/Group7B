@@ -37,23 +37,31 @@ function Home() {
 
   // todo, Eventリストから削除するための関数。isClickを0にすることで削除
   const deleteEvent = (index) => {
-    updateMessage(index, 0);
+    setMessages((prevMessages) => prevMessages.filter((_, i) => i !== index));
   };
 
   return (
     <div className="App">
       <div className="common-container">
-        <img src={banner} alt="Banner" className="chatroom-banner" />
-        {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
-        messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
-        <ChatRoom
-          addtask={addTask}
-          addevent={addEvent}
-          messages={messages}
-          addmessage={addMessage}
-        />
-        <Todo task={messages} delete={deleteEvent} />
-        <Event event={messages} delete={deleteEvent} />
+        <div className="top-section">
+          <div className="chat-room">
+            {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
+              messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
+            <ChatRoom
+              addtask={addTask}
+              addevent={addEvent}
+              messages={messages}
+              addmessage={addMessage}
+            />
+            <img src={banner} alt="Banner" className="chatroom-banner" />
+          </div>
+          <div className="todo-list">
+            <Todo task={messages} delete={deleteEvent} />
+          </div>
+          <div className="event-list">
+            <Event event={messages} delete={deleteEvent} />
+          </div>
+        </div>
       </div>
     </div>
   );
