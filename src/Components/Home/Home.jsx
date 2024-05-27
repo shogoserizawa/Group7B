@@ -36,8 +36,9 @@ function Home(props) {
   };
 
   // todo, Eventリストから削除するための関数。isClickを0にすることで削除
-  const deleteEvent = (index) => {
-    setMessages((prevMessages) => prevMessages.filter((_, i) => i !== index));
+  const deleteEvent = (id) => {
+    setMessages((prevMessages) =>
+      prevMessages.map((msg) => (msg.id === id ? { ...msg, isClick: 0} : msg)));
   };
 
   return (

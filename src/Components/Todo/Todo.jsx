@@ -4,6 +4,16 @@ import "./Todo.css";
 function Todo(props) {
   // const {messages, setMessages} = useSharedState();
 
+  //yyyy-mm-dd形式からmm-dd形式に変換する関数
+  const formatDate = (dateString) => {
+    const [month, day] = dateString.split("-");
+    return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
+  };
+
+  const handleChaeckboxChange = (id) => {
+    props.delete(id);
+  };
+
   return (
     <div>
       <h2>Todo List</h2>
@@ -13,10 +23,10 @@ function Todo(props) {
           .filter((task) => task.isClick === 1)
           .map((task, index) => (
             // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
-            <li key={index}>
+            <li key={task.id}>
               <label>
-                <input type="checkbox" onChange={() => props.delete(index)} />
-                {task.message}
+                <input type="checkbox" onChange={() => handleChaeckboxChange(task.id)} />
+                {formatDate(task.date.slice(-5))} | {task.message}
               </label>
             </li>
           ))}
