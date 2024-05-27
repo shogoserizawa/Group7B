@@ -20,7 +20,8 @@ const ChatRoom = (props) => {
 
     //websocketが開いたときの動作
     websocket.onopen = () => {
-      console.log("WebSocket connected");
+      const nameString = `<%>${props.name}`;
+      socketRef.current.send(nameString);
     };
 
     //websocketからメッセージを受信したときの動作。常に動いている。
@@ -28,7 +29,7 @@ const ChatRoom = (props) => {
       // <%>を境界に入れているのでそれを目印に送られた文字列を分割している
       const [sender, message, date, type] = e.data.split("<%>");
       const isClick = 0;
-      const newMessage = { sender, message, date, type, isClick };
+      const newMessage = { sender: sender, message: message, date: date, type: type, isClick: isClick };
       // props.addmessageでHome.jsxのaddMessage関数にアクセス
       props.addmessage(newMessage);
     };
@@ -42,6 +43,10 @@ const ChatRoom = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim() === "" || date.trim() === "") return;
+
+    const newMessage = { sender: "aaaaaaaaaa", message: text, date: date, type: 0, isClick: 0 };
+    props.addmessage(newMessage);
+
     const combinedString = `${text}<%>${date}<%>0`;
     setText("");
     setDate("");
@@ -53,6 +58,10 @@ const ChatRoom = (props) => {
   const EventhandleSubmit = (e) => {
     e.preventDefault();
     if (text2.trim() === "" || date2.trim() === "") return;
+
+    const newMessage = { sender: "aaaaaaaaaa", message: text, date: date, type: 1, isClick: 0 };
+    props.addmessage(newMessage);
+
     const combinedString = `${text2}<%>${date2}<%>1`;
     setText2("");
     setDate2("");
