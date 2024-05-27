@@ -59,7 +59,7 @@ const ChatRoom = (props) => {
     e.preventDefault();
     if (text2.trim() === "" || date2.trim() === "") return;
 
-    const newMessage = { sender: "aaaaaaaaaa", message: text, date: date, type: 1, isClick: 0 };
+    const newMessage = { sender: "aaaaaaaaaa", message: text2, date: date2, type: 1, isClick: 0 };
     props.addmessage(newMessage);
 
     const combinedString = `${text2}<%>${date2}<%>1`;
