@@ -5,7 +5,7 @@ import Event from "../Event/Event";
 import "./Home.css";
 import banner from "../images/banner.png"; // 画像をインポート
 
-function Home() {
+function Home(props) {
   // 下の配列に送られてきたメッセージがすべて入っている。要素は{ sender, message, date , type, isClick }の形。
   // messageが本文、dateが日時、typeは'0'ならtodo用、'1'(string型)ならEvent用、
   // isClickはchatroomでクリックされてなければ0、todo用でクリックされていれば1、event用でクリックされていれば2(int型)
@@ -48,6 +48,7 @@ function Home() {
             {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
               messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
             <ChatRoom
+              name = {props.name}
               addtask={addTask}
               addevent={addEvent}
               messages={messages}
