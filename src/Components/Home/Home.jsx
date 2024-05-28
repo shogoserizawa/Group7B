@@ -38,7 +38,10 @@ function Home(props) {
   // todo, Eventリストから削除するための関数。isClickを0にすることで削除
   const deleteEvent = (id) => {
     setMessages((prevMessages) =>
-      prevMessages.map((msg) => (msg.id === id ? { ...msg, isClick: 0} : msg)));
+      prevMessages.map((message) =>
+        message.id === id ? { ...message, isClick: 0 } : message
+      )
+    );
   };
 
   return (
@@ -49,7 +52,7 @@ function Home(props) {
             {/* Chatroomコンポーネントを開く際に、addTask関数をaddtaskという名前で、
               messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
             <ChatRoom
-              name = {props.name}
+              name={props.name}
               addtask={addTask}
               addevent={addEvent}
               messages={messages}

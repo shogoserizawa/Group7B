@@ -11,9 +11,9 @@ function Event(props) {
           .filter((event) => event.isClick === 2)
           .map((event, index) => (
             // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
-            <li key={index}>
+            <li key={event.id}>
               <label>
-                <input type="checkbox" onChange={() => props.delete(index)} />
+                <input type="checkbox" onChange={() => props.delete(event.id)} />
                 {event.date.slice(-5)}
                 {event.message}
               </label>

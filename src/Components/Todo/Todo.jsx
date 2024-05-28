@@ -13,9 +13,9 @@ function Todo(props) {
           .filter((task) => task.isClick === 1)
           .map((task, index) => (
             // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
-            <li key={index}>
+            <li key={task.id}>
               <label>
-                <input type="checkbox" onChange={() => props.delete(index)} />
+                <input type="checkbox" onChange={() => props.delete(task.id)} />
                 {task.message}
               </label>
             </li>

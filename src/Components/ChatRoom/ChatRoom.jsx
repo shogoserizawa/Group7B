@@ -29,7 +29,14 @@ const ChatRoom = (props) => {
       // <%>を境界に入れているのでそれを目印に送られた文字列を分割している
       const [sender, message, date, type] = e.data.split("<%>");
       const isClick = 0;
-      const newMessage = { sender: sender, message: message, date: date, type: type, isClick: isClick };
+      const newMessage = {
+        sender: sender,
+        message: message,
+        date: date,
+        type: type,
+        isClick: isClick,
+        id: Math.random().toString(),
+      };
       // props.addmessageでHome.jsxのaddMessage関数にアクセス
       props.addmessage(newMessage);
     };
@@ -44,7 +51,14 @@ const ChatRoom = (props) => {
     e.preventDefault();
     if (text.trim() === "" || date.trim() === "") return;
 
-    const newMessage = { sender: "aaaaaaaaaa", message: text, date: date, type: 0, isClick: 0 };
+    const newMessage = {
+      sender: "aaaaaaaaaa",
+      message: text,
+      date: date,
+      type: "0",
+      isClick: 0,
+      id: Math.random().toString(),
+    };
     props.addmessage(newMessage);
 
     const combinedString = `${text}<%>${date}<%>0`;
@@ -59,7 +73,14 @@ const ChatRoom = (props) => {
     e.preventDefault();
     if (text2.trim() === "" || date2.trim() === "") return;
 
-    const newMessage = { sender: "aaaaaaaaaa", message: text2, date: date2, type: 1, isClick: 0 };
+    const newMessage = {
+      sender: "aaaaaaaaaa",
+      message: text2,
+      date: date2,
+      type: "1",
+      isClick: 0,
+      id: Math.random().toString(),
+    };
     props.addmessage(newMessage);
 
     const combinedString = `${text2}<%>${date2}<%>1`;
@@ -89,7 +110,7 @@ const ChatRoom = (props) => {
       <h1 className="chatroom-title">CHAT ROOM</h1>
       <div className="chatbox">
         {props.messages.map((msg, index) => (
-          <button key={index} onClick={() => handleClick(msg, index)}>
+          <button key={msg.id} onClick={() => handleClick(msg, index)}>
             <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
           </button>
         ))}
