@@ -7,7 +7,7 @@ ul {
   position: relative;
   background-color: #d3d3d3;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   width: 200px;
@@ -20,7 +20,7 @@ ul {
   font-size: 19px;
   font-style: italic;
   font-family: "Arial", sans-serif;
-  font-weight: 100;
+  font-weight: 1;
 }
 .todo-container h2::before {
   content: "▶︎";
