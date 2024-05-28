@@ -20,10 +20,10 @@ ul {
   font-size: 19px;
   font-style: italic;
   font-family: "Arial", sans-serif;
-  font-weight: 1;
+  font-weight: bold;
 }
 .todo-container h2::before {
-  content: "▶︎";
+  content: "▶️";
   font-style: normal;
   margin-right: 10px;
   font-size: 19px;

@@ -16,7 +16,7 @@
   margin-bottom: 10px;
   font-style: italic; /* フォントを斜体にする */
   font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
-  font-weight: 100; /* フォントを細くする */
+  font-weight: 0; /* フォントを細くする */
   padding-left: 10px; /* 左余白を追加してバナーとタイトルが重ならないようにする */
 }
 
