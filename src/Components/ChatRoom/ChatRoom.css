@@ -27,7 +27,7 @@
   border: 1.5px solid #000000; /* 境界線の色を黒にする */
   padding: 10px;
   border-radius: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba(65, 65, 65, 0.2);
   background-color: #fff;
   margin: 0; /* 画面左固定 */
   margin-bottom: 20px;
