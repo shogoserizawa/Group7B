@@ -6,7 +6,7 @@ function Todo(props) {
 
   return (
     <div className="todo-container">
-      <h2>Todo List</h2>
+      <h2>TODO LIST</h2>
       <ul>
         {/* filterを使うことでisClickが1のもののみを表示している。props.todoで親から渡されたmessagesを参照 */}
         {props.task
