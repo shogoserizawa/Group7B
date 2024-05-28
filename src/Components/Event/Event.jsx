@@ -2,19 +2,8 @@ import React from "react";
 import "./Event.css";
 
 function Event(props) {
-
-  //yyyy-mm-dd形式からmm-dd形式に変換する関数
-  const formatDate = (dateString) => {
-    const [month, day] = dateString.split("-");
-    return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
-  };
-
-  const handleCheckboxChange = (id) => {
-    props.delete(id);
-  };
-
   return (
-    <div>
+    <div className="todo-container">
       <h2>Event List</h2>
       <ul>
         {/* filterを使うことでisClickが2のもののみを表示している。props.eventで親から渡されたmessagesを参照 */}
@@ -22,10 +11,10 @@ function Event(props) {
           .filter((event) => event.isClick === 2)
           .map((event, index) => (
             // task.messageでオブジェクトの中のメッセージを表示。日時を表示したい場合はtask.date
-            <li key={event.id}>
+            <li key={index}>
               <label>
-                <input type="checkbox" onChange={() => handleCheckboxChange(event.id)} />
-                {formatDate(event.date.slice(-5))}
+                <input type="checkbox" onChange={() => props.delete(index)} />
+                {event.date.slice(-5)}
                 {event.message}
               </label>
             </li>
