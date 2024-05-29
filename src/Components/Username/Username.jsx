@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Username.css";
 
 const Username = (props) => {
   const [username, setUsername] = useState("");
@@ -19,8 +20,8 @@ const Username = (props) => {
   };
 
   return (
-    <div>
-        <div>7文字以下でユーザ名を入力してください</div>
+    <div className="container">
+      <div>7文字以下でユーザ名を入力してください</div>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
