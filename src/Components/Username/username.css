@@ -1,0 +1,15 @@
+.container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.box {
+  width: 400px; /* 固定の横幅を設定 */
+  height: 90px; /* 固定の縦幅を設定 */
+  border: 1.5px solid #000000; /* 境界線の色を黒にする */
+  padding-left: 25px;
+  padding-top: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(65, 65, 65, 0.2);
+  background-color: #ffffff;
+}
