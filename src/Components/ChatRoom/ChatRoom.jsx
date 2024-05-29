@@ -127,8 +127,16 @@ const ChatRoom = (props) => {
             onClick={() => handleClick(msg, index)}
             className={msg.type === "0" ? "todo-message" : "event-message"}
           >
-            <span>{msg.sender}</span>
-            <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
+            {msg.sender !== "aaaaaaaaaa" /* 下のdivにcssつける */ && (
+              <div>
+                <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
+              </div>
+            )}
+            {msg.sender === "aaaaaaaaaa" && (
+              <div>
+                <span>my messeage</span> <span>{formatDate(msg.date)}</span>
+              </div>
+            )}
           </button>
         ))}
       </div>
