@@ -15,7 +15,7 @@ const ChatRoom = (props) => {
   // レンダリング時に一度だけ実行する関数。ソケット関連
   useEffect(() => {
     //websocketに接続
-    const websocket = new WebSocket("ws://localhost:60000");
+    const websocket = new WebSocket(`ws://${props.ip}:60000`);
     socketRef.current = websocket;
 
     //websocketが開いたときの動作

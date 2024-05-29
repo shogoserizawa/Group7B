@@ -53,6 +53,7 @@ function Home(props) {
               messages配列をmessagesという名前で渡している。他も同じ。子コンポーネントからのアクセスは props.関数名 */}
             <ChatRoom
               name={props.name}
+              ip={props.ip}
               addtask={addTask}
               addevent={addEvent}
               messages={messages}
