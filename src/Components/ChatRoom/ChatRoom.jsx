@@ -53,7 +53,7 @@ const ChatRoom = (props) => {
       text.trim() === "" ||
       date.trim() === "" ||
       text.includes("<%>") ||
-      text.length > 100
+      text.length > 60000
     )
       return;
 
@@ -81,7 +81,7 @@ const ChatRoom = (props) => {
       text2.trim() === "" ||
       date2.trim() === "" ||
       text2.includes("<%>") ||
-      text2.length > 100
+      text2.length > 60000
     )
       return;
 
