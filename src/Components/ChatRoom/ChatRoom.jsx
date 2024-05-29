@@ -58,7 +58,7 @@ const ChatRoom = (props) => {
       return;
 
     const newMessage = {
-      sender: "aaaaaaaaaa",
+      sender: props.name,
       message: text,
       date: date,
       type: "0",
@@ -86,7 +86,7 @@ const ChatRoom = (props) => {
       return;
 
     const newMessage = {
-      sender: "aaaaaaaaaa",
+      sender: props.name,
       message: text2,
       date: date2,
       type: "1",
@@ -127,6 +127,7 @@ const ChatRoom = (props) => {
             onClick={() => handleClick(msg, index)}
             className={msg.type === "0" ? "todo-message" : "event-message"}
           >
+            <span>{msg.sender}</span>
             <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
           </button>
         ))}

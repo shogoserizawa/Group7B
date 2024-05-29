@@ -2,6 +2,12 @@ import React from "react";
 import "./Event.css";
 
 function Event(props) {
+  //yyyy-mm-dd形式からmm-dd形式に変換する関数
+  const formatDate = (dateString) => {
+    const [month, day] = dateString.split("-");
+    return `${parseInt(month, 10)}/${parseInt(day, 10)}`;
+  };
+
   return (
     <div className="todo-container">
       <h2>EVENT LIST</h2>
@@ -17,8 +23,7 @@ function Event(props) {
                   type="checkbox"
                   onChange={() => props.delete(event.id)}
                 />
-                {event.date.slice(-5)}
-                {event.message}
+                {formatDate(event.date.slice(-5))} | {event.message}
               </label>
             </li>
           ))}
