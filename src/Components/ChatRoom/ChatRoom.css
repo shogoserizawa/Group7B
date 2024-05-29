@@ -115,13 +115,13 @@
   background-color: #ffffff;
   width: 65%;
   padding: 0 10px 0 10px;
-  border-radius: 20px 6px 20px 6px;
+  border-radius: 20px 6px 20px 20px;
 }
 
 .chatbox .other-message {
   align-self: flex-start !important;
   padding-right: 10px;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 6px 20px 20px 20px;
 }
 
 .sender-icon {
@@ -146,13 +146,6 @@
   width: 100%;
 }
 
-.parallel2 {
-  display: flex; /* Flexboxを使用して子要素を水平に並べる */
-  align-items: center; /* 子要素を垂直方向に中央揃え */
-  justify-content: space-between;
-  width: 100%;
-}
-
 .icon-msg-wrapper {
   display: flex;
   align-items: center;
@@ -170,4 +163,5 @@
   font-style: italic; /* フォントを斜体にする */
   font-family: "Arial", sans-serif; /* フォントファミリーを設定 */
   font-weight: 0; /* フォントを細くする */
+  padding-right: 10px;
 }
