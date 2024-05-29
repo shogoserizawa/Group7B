@@ -110,7 +110,11 @@ const ChatRoom = (props) => {
       <h1 className="chatroom-title">CHAT ROOM</h1>
       <div className="chatbox">
         {props.messages.map((msg, index) => (
-          <button key={msg.id} onClick={() => handleClick(msg, index)}>
+          <button
+            key={msg.id}
+            onClick={() => handleClick(msg, index)}
+            className={msg.type === "0" ? "todo-message" : "event-message"}
+          >
             <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
           </button>
         ))}

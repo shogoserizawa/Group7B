@@ -21,16 +21,34 @@
 }
 
 .chatbox {
-  width: 500px; /* 固定の横幅を設定 */
-  height: 400px; /* 固定の縦幅を設定 */
+  width: 400px; /* 固定の横幅を設定 */
+  height: 430px; /* 固定の縦幅を設定 */
   overflow-y: auto; /* 縦方向にスクロール可能にする */
   border: 1.5px solid #000000; /* 境界線の色を黒にする */
-  padding: 10px;
+  padding-inline: 20px;
+  padding-top: 15px;
   border-radius: 30px;
   box-shadow: 0 4px 4px rgba(65, 65, 65, 0.2);
   background-color: #fff;
   margin: 0; /* 画面左固定 */
   margin-bottom: 20px;
+}
+
+.chatbox .todo-message {
+  width: 80%;
+  background-color: #ffffff;
+  border: 1.5px solid #c60000;
+  box-shadow: 2px 3px 4px rgba(213, 55, 55, 0.2);
+
+  margin-top: 8px;
+}
+
+.chatbox .event-message {
+  width: 80%;
+  background-color: hsl(0, 0%, 100%);
+  border: 1.5px solid #1574e1;
+  box-shadow: 2px 3px 4px rgba(8, 82, 202, 0.2);
+  margin-top: 8px;
 }
 
 .chatbox button {
@@ -50,7 +68,7 @@
 }
 
 .chatbox button:hover {
-  background-color: #e0e0e0;
+  background-color: #d1d0d0;
 }
 
 .chatbox .sender {
@@ -61,7 +79,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 500px; /* 固定の横幅を設定 */
+  width: 450px; /* 固定の横幅を設定 */
   margin: 0; /* 左揃え */
   padding-left: 10px; /* 左余白を追加 */
 }
