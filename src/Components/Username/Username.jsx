@@ -36,7 +36,7 @@ const Username = (props) => {
           <div>
             <label>
               IPアドレス:
-              <input type="text" value={ipAddress} onChange={handleChange} />
+              <input type="text" value={ipAddress} onChange={handleChangeIp} />
             </label>
           </div>
           <button type="submit" disabled={!isValid}>
