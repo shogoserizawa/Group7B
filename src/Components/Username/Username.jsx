@@ -21,18 +21,20 @@ const Username = (props) => {
 
   return (
     <div className="container">
-      <div>7文字以下でユーザ名を入力してください</div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Username:
-            <input type="text" value={username} onChange={handleChange} />
-          </label>
-        </div>
-        <button type="submit" disabled={!isValid}>
-          Submit
-        </button>
-      </form>
+      <div className="box">
+        <div>▶︎ 7文字以下でユーザ名を入力してください</div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>
+              Username:
+              <input type="text" value={username} onChange={handleChange} />
+            </label>
+          </div>
+          <button type="submit" disabled={!isValid}>
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
