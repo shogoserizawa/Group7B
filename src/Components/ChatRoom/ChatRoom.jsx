@@ -119,7 +119,11 @@ const ChatRoom = (props) => {
   return (
     <div className="chatroom-container">
       {/* <img src={banner} alt="Banner" className="chatroom-banner" /> */}
-      <h1 className="chatroom-title">CHAT ROOM</h1>
+      <div className="parallel2">
+        <h1 className="chatroom-title">CHAT ROOM</h1>
+        <div className="yourname">You＿ {props.name}</div>
+      </div>
+
       <div className="chatbox">
         {props.messages.map((msg, index) => (
           <button
