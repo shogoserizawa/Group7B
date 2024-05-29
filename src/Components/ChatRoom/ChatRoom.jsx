@@ -49,7 +49,13 @@ const ChatRoom = (props) => {
   // todoフォームの送信ボタンが押されたときの処理
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() === "" || date.trim() === "") return;
+    if (
+      text.trim() === "" ||
+      date.trim() === "" ||
+      text.includes("<%>") ||
+      text.length > 100
+    )
+      return;
 
     const newMessage = {
       sender: "aaaaaaaaaa",
@@ -71,7 +77,13 @@ const ChatRoom = (props) => {
   // eventフォームの送信ボタンが押されたときの処理
   const EventhandleSubmit = (e) => {
     e.preventDefault();
-    if (text2.trim() === "" || date2.trim() === "") return;
+    if (
+      text2.trim() === "" ||
+      date2.trim() === "" ||
+      text2.includes("<%>") ||
+      text2.length > 100
+    )
+      return;
 
     const newMessage = {
       sender: "aaaaaaaaaa",
