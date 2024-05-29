@@ -125,10 +125,24 @@ const ChatRoom = (props) => {
           <button
             key={msg.id}
             onClick={() => handleClick(msg, index)}
-            className={msg.type === "0" ? "todo-message" : "event-message"}
+            className={`${
+              msg.sender === props.name ? "my-message" : "other-message"
+            } ${msg.type === "0" ? "todo-message" : "event-message"}`}
           >
-            <span>{msg.sender}</span>
-            <span>{msg.message}</span> <span>{formatDate(msg.date)}</span>
+            <div className="parallel">
+              <div className="icon-msg-wrapper">
+                {msg.sender !== props.name && (
+                  <div className="sender-icon">
+                    <span>{msg.sender}</span>
+                  </div>
+                )}
+                <span id="message">{msg.message}</span>
+              </div>
+              <span>
+                {"| "}
+                {formatDate(msg.date)}
+              </span>
+            </div>
           </button>
         ))}
       </div>
